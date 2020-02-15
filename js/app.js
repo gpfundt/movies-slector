@@ -33,9 +33,6 @@ function autocomplete(inp, arr) {
                 console.log(inp.value);
                 var imdbID = ids[titles.indexOf(inp.value)];
                 console.log(imdbID);
-                function runML(){
-                    
-                }
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
