@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>ML Movie Selector</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" />
+  
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/small-business.css') }}" />
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #537df0;">
+    <div class="container">
+      <a class="navbar-brand" style="color: white" href="#">Movie Selector</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" style="color: white" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="https://i2.wp.com/culturedvultures.com/wp-content/uploads/2017/12/star-wars-movie-theater-china.jpg?fit=770%2C513&ssl=1" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light"><b>ML Movie Selector</b></h1>
+        <p>Time to watch a movie, but suffering from Analysis Paralysis?</p>
+        <p>We've used <font face="Courier New" size=4><b>Machine Learning</b></font> to do the heavy lifting!</p> 
+        <p>Think of a movie you love, search for it below and we'll return the three most similar.</p>
+        <form autocomplete="off" action="/action_page.php">
+          <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Movie Title">
+          </div>
+          <!--<input type="submit">-->
+        </form>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+      <div class="card-body">
+        <p class="text-white m-0"><font face="Snell Roundhand" size=6>“Everything I learned I learned from the movies.”</font></p>
+        <p class="text-white m-0"><font face="Snell Roundhand" size=3><b>Audrey Hepburn</b></font></p>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title"><center>Toy Story</center></h2>
+            <p class="card-text">A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.</p>
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg" alt="">
+          </div>
+          <div class="card-footer">
+            <a href="https://www.imdb.com/title/tt0114709/" class="btn btn-primary btn-sm">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title"><center>Jumanji</center></h2>
+            <p class="card-text">When two kids find and play a magical board game, they release a man trapped in it for decades--and a host of dangers that can only be stopped by finishing the game.</p>
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="https://m.media-amazon.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="">
+          </div>
+          <div class="card-footer">
+            <a href="https://www.imdb.com/title/tt0113497/" class="btn btn-primary btn-sm">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title"><center>Balto</center></h2>
+            <p class="card-text">An outcast Husky risks his life with other sled dogs to prevent a deadly epidemic from ravaging Nome, Alaska.</p>
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="https://m.media-amazon.com/images/M/MV5BMjBhNmFlZjMtMzhlYy00NDBlLWFiMjctMmE0ZjgwOGM2MTNmXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg" alt="">
+          </div>
+          <div class="card-footer">
+            <a href="https://www.imdb.com/title/tt0112453/" class="btn btn-primary btn-sm">More Info</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <!--
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  -->
+  <script src="{{ url_for('static', filename="vendor/jquery/jquery.min.js")}}"></script>
+  <script src="{{ url_for('static', filename="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="{{ url_for('static', filename="js/app.js")}}"></script>
+
+</body>
+
+</html>
