@@ -13,16 +13,17 @@ conn = engine.connect()
 inspector = inspect(engine)
 tables = inspector.get_table_names()
 
-# Value from selection on search bar
-value = full[full['Title']=='Toy Story'].index.values[0]
-
-full = pd.read_csv('movies.csv').dropna()
+full = pd.read_csv('final_movies.csv').dropna()
 selections = full.drop(columns=['Unnamed: 0','movieId','imdbID','Title','Year','Ratings','Released','Runtime','Plot','Poster','imdbVotes'])
 
 kmeans = KMeans(n_clusters=800, random_state = 42)
 kmeans.fit(selections)
 clusters = kmeans.predict(selections)
 full['clusters']=clusters
+
+# Value from selection on search bar
+searched = 'Toy Story'
+value = full[full['Title']== searched].index.values[0]
 
 new_full = full[full['clusters'] == full['clusters'][value]].reset_index()
 plots_arr = new_full['Plot'].to_numpy()
@@ -48,10 +49,11 @@ for i in range(0,len(my_tag_matrix)):
             my_tag_matrix.iloc[i][my_tags.index(my_tags[j])] = 1
 
 my_tag_matrix['imdbID'] = new_full['imdbID']
+new_value = new_full[new_full['Title']==searched].index.values[0]
 
 new_selections = my_tag_matrix.drop(columns = ['imdbID'])
 
-thing = new_selections.iloc[value]
+thing = new_selections.iloc[new_value]
 
 knn = NearestNeighbors(n_neighbors=4)
 knn.fit(new_selections)
