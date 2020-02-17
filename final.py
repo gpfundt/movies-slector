@@ -1,4 +1,3 @@
-
 import pandas as pd
 import sqlalchemy
 import requests
@@ -16,6 +15,11 @@ tables = inspector.get_table_names()
 
 full = pd.read_csv('final_movies.csv').dropna()
 selections = full.drop(columns=['Unnamed: 0','movieId','imdbID','Title','Year','Ratings','Released','Runtime','Plot','Poster','imdbVotes'])
+
+kmeans = KMeans(n_clusters=800, random_state = 42)
+kmeans.fit(selections)
+clusters = kmeans.predict(selections)
+full['clusters']=clusters
 
 # Value from selection on search bar
 # searched = 'Toy Story'
