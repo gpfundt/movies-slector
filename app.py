@@ -1,7 +1,10 @@
-from flask import Flask, render_template
-app = Flask(__name__)
+import requests
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
-    console.log('WOooooooo')
+url = 'https://www.w3schools.com/python/demopage.php'
+myobj = {'somekey': 'somevalue'}
+
+x = requests.post(url, data = myobj)
+
+#print the response text (the content of the requested file):
+
+print(x.text)
