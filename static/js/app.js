@@ -99,7 +99,7 @@ function autocomplete(inp, arr) {
     });
 }
 
-d3.csv("movie_titles.csv").then(function(data) {
+d3.csv("static/js/movie_titles.csv").then(function(data) {
     titles = [];
     ids =  [];
     for (const movie in data) {
