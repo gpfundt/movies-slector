@@ -1,6 +1,7 @@
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
+    console.log("This is running");
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function(e) {
@@ -98,7 +99,7 @@ function autocomplete(inp, arr) {
     });
 }
 
-d3.csv("../movie_titles.csv").then(function(data) {
+d3.csv("movie_titles.csv").then(function(data) {
     titles = [];
     ids =  [];
     for (const movie in data) {
