@@ -8,10 +8,6 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-engine = create_engine("sqlite:///movies-db.sqlite")
-conn = engine.connect()
-inspector = inspect(engine)
-tables = inspector.get_table_names()
 
 full = pd.read_csv('final_movies.csv').dropna()
 selections = full.drop(columns=['Unnamed: 0','movieId','imdbID','Title','Year','Ratings','Released','Runtime','Plot','Poster','imdbVotes'])
