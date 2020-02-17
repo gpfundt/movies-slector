@@ -36,6 +36,18 @@ function autocomplete(inp, arr) {
                 console.log(imdbID);
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
+
+                var value_data = imdbID;
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/test',
+                    data: JSON.stringify(value_data),
+                    contentType: 'application/json',
+                    success: function (response_data) {
+                        alert("success");
+                    }   
+                });
                 closeAllLists();
             });
             a.appendChild(b);
