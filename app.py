@@ -15,7 +15,6 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template('index.html')
-    console.log('WOooooooo')
 
 @app.route('/test', methods=['GET', 'POST']) 
 def test():
