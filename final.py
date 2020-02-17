@@ -1,6 +1,5 @@
 import pandas as pd
 import sqlalchemy
-import requests
 from sqlalchemy import *
 import re
 import numpy as np
@@ -20,7 +19,7 @@ full['clusters']=clusters
 # Value from selection on search bar
 # searched = 'Toy Story'
 def runSlector(searched):
-    value = full[full['Title']== searched].index.values[0]
+    value = full[full['imdbID']==searched].index.values[0]
 
     new_full = full[full['clusters'] == full['clusters'][value]].reset_index()
     plots_arr = new_full['Plot'].to_numpy()
@@ -46,7 +45,7 @@ def runSlector(searched):
                 my_tag_matrix.iloc[i][my_tags.index(my_tags[j])] = 1
 
     my_tag_matrix['imdbID'] = new_full['imdbID']
-    new_value = new_full[new_full['Title']==searched].index.values[0]
+    new_value = new_full[new_full['imdbID']==searched].index.values[0]
 
     new_selections = my_tag_matrix.drop(columns = ['imdbID'])
 
@@ -58,7 +57,7 @@ def runSlector(searched):
 
     results = []
     for i in arr[0]:
-        url = f'https://imdb.com/title/{new_full["imdbID"][i]}'
+        url = f'https://imdb.com/title/{new_full["imdbID"].iloc[i]}'
         plot= new_full['Plot'].iloc[i]
         title = new_full['Title'].iloc[i]
         poster = new_full['Poster'].iloc[i]
