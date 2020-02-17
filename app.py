@@ -3,14 +3,11 @@ from flask import request
 
 import pandas as pd
 import sqlalchemy
-import requests
 from sqlalchemy import *
 import re
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
-from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
-
 
 
 app = Flask(__name__)
@@ -24,21 +21,12 @@ def hello_world():
 def test():
     print(request.get_json())
 
-    
-    full = pd.read_csv('final_movies.csv').dropna()
-    print("LEN",len(full["imdbID"]))
-    selections = full.drop(columns=['movieId','imdbID','Title','Year','Ratings','Released','Runtime','Plot','Poster','imdbVotes'])
-
-    kmeans = KMeans(n_clusters=5, random_state = 42)
-    kmeans.fit(selections)
-    clusters = kmeans.predict(selections)
-    full['clusters']=clusters
-
     # print(runSlector(request.get_json()))
+    full = pd.read_csv('clustered_movies.csv')
     searched = request.get_json()
     print("TYPE SEARCHED",type(searched))
     print("SEARCHED",searched)
-    value = full[full['imdbID']== searched].index.values[0]
+    value = full[full['imdbID']==searched].index.values[0]
     print("VALUE",value)
     new_full = full[full['clusters'] == full['clusters'][value]].reset_index()
     plots_arr = new_full['Plot'].to_numpy()
@@ -64,7 +52,6 @@ def test():
                 my_tag_matrix.iloc[i][my_tags.index(my_tags[j])] = 1
 
     my_tag_matrix['imdbID'] = new_full['imdbID']
-
     new_value = new_full[new_full['imdbID']==searched].index.values[0]
 
     new_selections = my_tag_matrix.drop(columns = ['imdbID'])
@@ -77,8 +64,8 @@ def test():
 
     results = {}
     j = 1
-    for i in arr[0]:
-        url = f'https://imdb.com/title/{new_full["imdbID"][i]}'
+    for i in arr[0][1:4]:
+        url = f'https://imdb.com/title/{new_full["imdbID"].iloc[i]}'
         plot= new_full['Plot'].iloc[i]
         title = new_full['Title'].iloc[i]
         poster = new_full['Poster'].iloc[i]

@@ -56,7 +56,7 @@ def runSlector(searched):
     arr = knn.kneighbors([thing], return_distance = False)
 
     results = []
-    for i in arr[0]:
+    for i in arr[0][1:4]:
         url = f'https://imdb.com/title/{new_full["imdbID"].iloc[i]}'
         plot= new_full['Plot'].iloc[i]
         title = new_full['Title'].iloc[i]
