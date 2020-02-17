@@ -46,7 +46,18 @@ function autocomplete(inp, arr) {
                     contentType: 'application/json',
                     success: function (response_data) {
                         console.log(response_data);
-                        alert(response_data);
+                        document.getElementById("title1").innerHTML = response_data;
+                        document.getElementById("plot1").innerHTML = response_data;
+                        document.getElementById("poster1").src="https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_UY1200_CR85,0,630,1200_AL_.jpg";
+                        document.getElementById("link1").href = "https://www.imdb.com/title/tt0107290/";
+                        document.getElementById("title2").innerHTML = response_data;
+                        document.getElementById("plot2").innerHTML = response_data;
+                        document.getElementById("poster2").src="https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_UY1200_CR85,0,630,1200_AL_.jpg";
+                        document.getElementById("link2").href = "https://www.imdb.com/title/tt0107290/";
+                        document.getElementById("title3").innerHTML = response_data;
+                        document.getElementById("plot3").innerHTML = response_data;
+                        document.getElementById("poster3").src="https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_UY1200_CR85,0,630,1200_AL_.jpg";
+                        document.getElementById("link3").href = "https://www.imdb.com/title/tt0107290/";
                     }   
                 });
                 closeAllLists();
