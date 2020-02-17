@@ -45,7 +45,8 @@ function autocomplete(inp, arr) {
                     data: JSON.stringify(value_data),
                     contentType: 'application/json',
                     success: function (response_data) {
-                        alert("success");
+                        console.log(response_data);
+                        alert(response_data);
                     }   
                 });
                 closeAllLists();
