@@ -39,6 +39,7 @@ def test():
         text=re.sub("(\\d|\\W)+"," ",text)
         corpus.append(text)
 
+#     max_feat = len(new_full)
     vectorizer = TfidfVectorizer(max_features=100, stop_words='english')
     X = vectorizer.fit_transform(corpus)
 
