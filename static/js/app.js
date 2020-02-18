@@ -54,11 +54,11 @@ function autocomplete(inp, arr) {
                         document.getElementById("poster1").src=response_data[movie1]["poster"];
                         document.getElementById("link1").href = response_data[movie1]["url"];
                         document.getElementById("title2").innerHTML = response_data[movie2]["title"];
-                        document.getElementById("plot2").innerHTML = response_data[movie2]["title"];
+                        document.getElementById("plot2").innerHTML = response_data[movie2]["plot"];
                         document.getElementById("poster2").src=response_data[movie2]["poster"];
                         document.getElementById("link2").href = response_data[movie2]["url"];
                         document.getElementById("title3").innerHTML = response_data[movie3]["title"];
-                        document.getElementById("plot3").innerHTML = response_data[movie3]["title"];
+                        document.getElementById("plot3").innerHTML = response_data[movie3]["plot"];
                         document.getElementById("poster3").src=response_data[movie3]["poster"];
                         document.getElementById("link3").href = response_data[movie3]["url"];
                     }   
